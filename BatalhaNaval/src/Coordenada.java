@@ -1,8 +1,8 @@
 
 public class Coordenada {
 
-	String letra;
-	String numero;
+	protected String letra;
+	protected String numero;
 	
 	public String getLetra() {
 		return letra;

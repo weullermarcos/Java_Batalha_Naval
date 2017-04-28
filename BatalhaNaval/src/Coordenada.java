@@ -17,7 +17,7 @@ public class Coordenada {
 		this.numero = numero;
 	}
 	
-	public boolean letraPermitida(){
+	public boolean letraValida(){
 			
 		String letra = this.letra.toUpperCase();
 		

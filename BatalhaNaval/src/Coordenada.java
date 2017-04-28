@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Coordenada {
@@ -68,6 +69,22 @@ public class Coordenada {
 		int numero = ran.nextInt(9);
 		return String.valueOf(numero);
 
+	}
+	
+	
+	public static boolean coordenadaEstaLivre(ArrayList<Navio> navios, Coordenada coordenada) {
+		
+		for (Navio navio : navios) {
+			
+			for (Coordenada coordenadaNavio : navio.posicoes) {
+				
+				if(coordenadaNavio.getLetra() == coordenada.getLetra() && coordenadaNavio.getNumero() == coordenada.getNumero()){
+					return false;
+				}	
+			}		
+		}
+		
+		return true;
 	}
 	
 }

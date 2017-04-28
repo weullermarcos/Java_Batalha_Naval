@@ -4,6 +4,7 @@ public class NavioPortaAvioes extends Navio implements Posicao{
 
 	public NavioPortaAvioes() {
 
+		super();
 		this.tamanho = 5;
 	}
 	
@@ -12,11 +13,4 @@ public class NavioPortaAvioes extends Navio implements Posicao{
 		// TODO Auto-generated method stub
 		return this;
 	}
-	
-	@Override
-	public boolean posicaoValida(ArrayList<Navio> navios, Coordenada coordenada) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
 }

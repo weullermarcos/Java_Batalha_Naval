@@ -4,6 +4,7 @@ public class Navio4Canos extends Navio implements Posicao{
 
 	public Navio4Canos() {
 
+		super();
 		this.tamanho = 4;
 	}
 	
@@ -11,12 +12,6 @@ public class Navio4Canos extends Navio implements Posicao{
 	public Navio4Canos gerarPosicao(ArrayList<Navio> navios) {
 		// TODO Auto-generated method stub
 		return this;
-	}
-	
-	@Override
-	public boolean posicaoValida(ArrayList<Navio> navios, Coordenada coordenada) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 	
 }

@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public class Navio {
 
-	int tamanho;
-	Coordenada posicao;
+	protected int tamanho;
+
+	protected ArrayList<Coordenada> posicoes = new ArrayList<>();
 
 	public int getTamanho() {
 		return tamanho;
@@ -9,14 +12,6 @@ public class Navio {
 
 	public void setTamanho(int tamanho) {
 		this.tamanho = tamanho;
-	}
-
-	public Coordenada getPosicao() {
-		return posicao;
-	}
-
-	public void setPosicao(Coordenada posicao) {
-		this.posicao = posicao;
 	}
 	
 }

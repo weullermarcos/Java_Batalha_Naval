@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Coordenada {
 
@@ -50,4 +51,23 @@ public class Coordenada {
 			return false;
 		}
 	}
+	
+	public static String gerarLetraAleatoria(){
+		
+		//gera letras de A a J
+		Random ran = new Random();
+		char letra = ((char) (ran.nextInt(10) + 65));
+		return "" + letra;
+		
+	}
+	
+	public static String gerarNumeroAleatorio(){
+		
+		//gera um numero aleatorio de 0 a 9
+		Random ran = new Random();
+		int numero = ran.nextInt(9);
+		return String.valueOf(numero);
+
+	}
+	
 }

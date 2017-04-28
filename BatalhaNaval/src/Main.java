@@ -39,6 +39,7 @@ public class Main {
 
 		
 		
+		
 		//enquanto nao for digitado uma letra valida
 		while(!letraValida){
 			

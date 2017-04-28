@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Navio1Cano extends Navio implements Posicao {
 
@@ -18,18 +17,12 @@ public class Navio1Cano extends Navio implements Posicao {
 			
 			Coordenada coordenada = new Coordenada();
 
-			Random ran = new Random();
-			char letra = ((char) (ran.nextInt(10) + 65));
-			coordenada.letra = "" + letra;
-			
-			//gera um numero aleatorio de 0 a 9
-			ran = new Random();
-			int numero = ran.nextInt(9);
-			coordenada.numero = String.valueOf(numero);
+			coordenada.letra = Coordenada.gerarLetraAleatoria();
+			coordenada.numero = Coordenada.gerarNumeroAleatorio();
 			
 			posicaoValida = posicaoValida(navios, coordenada);
 			
-			this.setPosicao(coordenada);
+			this.posicoes.add(coordenada);
 			
 		}
 		
@@ -42,11 +35,14 @@ public class Navio1Cano extends Navio implements Posicao {
 		
 		for (Navio navio : navios) {
 			
-			if(navio.getPosicao().getLetra() == coordenada.getLetra() && navio.getPosicao().getNumero() == coordenada.getNumero())
-				return false;	
+			for (Coordenada coordenadaNavio : navio.posicoes) {
+				
+				if(coordenadaNavio.getLetra() == coordenada.getLetra() && coordenadaNavio.getNumero() == coordenada.getNumero()){
+					return false;
+				}	
+			}		
 		}
 		
 		return true;
 	}
-	
 }

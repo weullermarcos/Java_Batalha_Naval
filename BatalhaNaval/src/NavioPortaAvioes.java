@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class NavioPortaAvioes extends Navio implements Posicao{
 
@@ -7,9 +8,15 @@ public class NavioPortaAvioes extends Navio implements Posicao{
 	}
 	
 	@Override
-	public NavioPortaAvioes gerarPosicao() {
+	public NavioPortaAvioes gerarPosicao(ArrayList<Navio> navios) {
 		// TODO Auto-generated method stub
 		return this;
+	}
+	
+	@Override
+	public boolean posicaoValida(ArrayList<Navio> navios, Coordenada coordenada) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }

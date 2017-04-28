@@ -18,29 +18,25 @@ public class Main {
 		ArrayList<Navio> navios = new ArrayList<>();
 		
 		//Navios de 1 cano
-		navios.add(new Navio1Cano().gerarPosicao());
-		navios.add(new Navio1Cano().gerarPosicao());
-		navios.add(new Navio1Cano().gerarPosicao());
-		navios.add(new Navio1Cano().gerarPosicao());
+		navios.add(new Navio1Cano().gerarPosicao(navios));
+		navios.add(new Navio1Cano().gerarPosicao(navios));
+		navios.add(new Navio1Cano().gerarPosicao(navios));
+		navios.add(new Navio1Cano().gerarPosicao(navios));
 		//Navios de 2 canos
-		navios.add(new Navio2Canos().gerarPosicao());
-		navios.add(new Navio2Canos().gerarPosicao());
-		navios.add(new Navio2Canos().gerarPosicao());
+		navios.add(new Navio2Canos().gerarPosicao(navios));
+		navios.add(new Navio2Canos().gerarPosicao(navios));
+		navios.add(new Navio2Canos().gerarPosicao(navios));
 		//Navios de 3 canos
-		navios.add(new Navio3Canos().gerarPosicao());
-		navios.add(new Navio3Canos().gerarPosicao());
+		navios.add(new Navio3Canos().gerarPosicao(navios));
+		navios.add(new Navio3Canos().gerarPosicao(navios));
 		//Navio de 4 canos 
-		navios.add(new Navio4Canos().gerarPosicao());
+		navios.add(new Navio4Canos().gerarPosicao(navios));
 		//Porta avioes
-		navios.add(new NavioPortaAvioes().gerarPosicao());
+		navios.add(new NavioPortaAvioes().gerarPosicao(navios));
 		
 		
 		//posicionar navios no tabuleiro
-		for (Navio navio : navios) {
-			
-			
-			
-		}
+
 		
 		
 		//enquanto nao for digitado uma letra valida

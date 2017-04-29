@@ -10,7 +10,7 @@ public class Navio {
 	public Navio() {
 		
 		super();
-		this.orientacao = this.getOrientacao();
+		this.orientacao = this.gerarOrientacaoAleatoria();
 	}
 
 	public int getTamanho() {
@@ -22,7 +22,15 @@ public class Navio {
 	}
 
 	public Orientacao getOrientacao() {
-		
+		return orientacao;
+	}
+
+	public void setOrientacao(Orientacao orientacao) {
+		this.orientacao = orientacao;
+	}
+	
+	public Orientacao gerarOrientacaoAleatoria(){
+	
 		//gera de forma aleatoria a orientacao do navio
 		Random ran = new Random();
 		int numero = ran.nextInt(100);
@@ -31,11 +39,6 @@ public class Navio {
 			return orientacao.HORIZONTAL;
 		else
 			return orientacao.VERTICAL;
-	}
-
-	public void setOrientacao(Orientacao orientacao) {
-		this.orientacao = orientacao;
-	}
-	
-	
+		
+	}	
 }

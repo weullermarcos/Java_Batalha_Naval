@@ -29,11 +29,11 @@ public class Navio3Canos extends Navio implements Posicao{
 			}
 			else{
 				
-				if((coordenada1.numero == "9" || coordenada1.numero == "8") && this.getOrientacao() == Orientacao.HORIZONTAL){
+				if((coordenada1.numero.equals("9")  || coordenada1.numero.equals("8") ) && this.getOrientacao() == Orientacao.HORIZONTAL){
 					
 					coordenadaValida = false;
 				}
-				else if((coordenada1.letra == "J" || coordenada1.letra == "I") && this.getOrientacao() == Orientacao.VERTICAL){
+				else if((coordenada1.letra.equals("J") || coordenada1.letra.equals("I")) && this.getOrientacao() == Orientacao.VERTICAL){
 					
 					coordenadaValida = false;
 				}

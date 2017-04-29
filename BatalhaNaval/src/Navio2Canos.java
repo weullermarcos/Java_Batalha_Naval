@@ -27,11 +27,11 @@ public class Navio2Canos extends Navio implements Posicao{
 			}
 			else{
 				
-				if(coordenada1.numero == "9" && this.getOrientacao() == Orientacao.HORIZONTAL){
+				if(coordenada1.numero.equals("9")  && this.getOrientacao() == Orientacao.HORIZONTAL){
 					
 					coordenadaValida = false;
 				}
-				else if( coordenada1.letra == "J" && this.getOrientacao() == Orientacao.VERTICAL){
+				else if( coordenada1.letra.equals("J")  && this.getOrientacao() == Orientacao.VERTICAL){
 					
 					coordenadaValida = false;
 				}

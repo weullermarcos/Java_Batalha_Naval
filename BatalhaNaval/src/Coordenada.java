@@ -74,11 +74,17 @@ public class Coordenada {
 	
 	public static boolean coordenadaEstaLivre(ArrayList<Navio> navios, Coordenada coordenada) {
 		
+		String letra1 = coordenada.getLetra();
+		String numero1 = coordenada.getNumero();
+		
 		for (Navio navio : navios) {
 			
 			for (Coordenada coordenadaNavio : navio.posicoes) {
 				
-				if(coordenadaNavio.getLetra() == coordenada.getLetra() && coordenadaNavio.getNumero() == coordenada.getNumero()){
+				String letra2 = coordenadaNavio.getLetra();
+				String numero2 = coordenadaNavio.getNumero();
+				
+				if(letra1.equals(letra2) && numero1.equals(numero2)){
 					return false;
 				}	
 			}		

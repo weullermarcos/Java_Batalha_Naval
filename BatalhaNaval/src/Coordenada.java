@@ -87,4 +87,43 @@ public class Coordenada {
 		return true;
 	}
 	
+	public static String pegaProximaLetra(String letra){
+		
+		switch (letra) {
+		
+		case "A":
+			return "B";
+			
+		case "B":
+			return "C";
+			
+		case "C":
+			return "D";
+			
+		case "D":
+			return "E";
+			
+		case "E":
+			return "F";
+			
+		case "F":
+			return "G";
+			
+		case "G":
+			return "H";
+			
+		case "H":
+			return "I";
+			
+		case "I":
+			return "J";
+			
+		case "J":
+			return "J";
+
+		default:
+			return "A";
+		}
+	}
+	
 }

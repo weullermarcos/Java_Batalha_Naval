@@ -5,15 +5,8 @@ public class Main {
 
 	public static void main(String[] args) {
 				
-		Scanner scanner = new Scanner(System.in);
 		Tabuleiro tabuleiro = new Tabuleiro();
-		Coordenada coordenada = new Coordenada();
-		boolean letraValida = false;
-		boolean numeroValido = false;
-		
-		tabuleiro.DesenhaCabecalho();
-		tabuleiro.DesenhaTabuleiro();
-		
+				
 		//Criar lista de Navios
 		ArrayList<Navio> navios = new ArrayList<>();
 		
@@ -35,34 +28,60 @@ public class Main {
 		navios.add(new Navio1Cano().gerarPosicao(navios));
 		navios.add(new Navio1Cano().gerarPosicao(navios));
 
-		
-		//enquanto nao for digitado uma letra valida
-		while(!letraValida){
+		//mantem o jogo em loop
+		while(true){
 			
-			System.out.println("\nDigite uma letra: ");
-			coordenada.letra = scanner.nextLine();
+			Coordenada coordenada = new Coordenada();
+			boolean letraValida = false;
+			boolean numeroValido = false;
 			
-			letraValida = coordenada.letraValida();
+			tabuleiro.DesenhaCabecalho();
+			tabuleiro.DesenhaTabuleiro();
 			
-			if(!letraValida){
-				System.out.println("\nLetra invalida, favor digitar uma letra valida ");
+			Scanner scanner = new Scanner(System.in);
+			
+			//enquanto nao for digitado uma letra valida
+			while(!letraValida){
+				
+				System.out.println("\nDigite uma letra: ");
+				coordenada.letra = scanner.nextLine().toUpperCase();
+				
+				letraValida = coordenada.letraValida();
+				
+				if(!letraValida){
+					System.out.println("\nLetra invalida, favor digitar uma letra valida ");
+				}
 			}
-		}
-		
-		//enquanto nao for digitado uma letra valida
-		while(!numeroValido){
 			
-			System.out.println("\nDigite um numero: ");
-			coordenada.numero = scanner.nextLine();
-			
-			numeroValido = coordenada.numeroValido();
-			
-			if(!numeroValido){
-				System.out.println("\nNumero invalido, favor digitar uma numero valido ");
+			//enquanto nao for digitado um numero valido
+			while(!numeroValido){
+				
+				System.out.println("\nDigite um numero: ");
+				coordenada.numero = scanner.nextLine();
+				
+				numeroValido = coordenada.numeroValido();
+				
+				if(!numeroValido){
+					System.out.println("\nNumero invalido, favor digitar uma numero valido ");
+				}
 			}
+						
+			//verificar se já atirou na posicao informada
+			if(Coordenada.tiroJaEfetudo(navios, coordenada)){
+				System.out.println("\nVc ja atirou em (" + coordenada.getLetra() + "-" + coordenada.getNumero() + "), favor informar uma coordenada nova\n\n");
+			}
+			else{
+				
+				//faz o disparo
+				int resultado = Coordenada.fazerDisparoEmCoordenada(navios, coordenada);
+				
+				//diz qual navio foi acertado
+				System.out.println(Tabuleiro.vrificaDisparo(resultado));
+				
+				
+				//Atualizar tabuleiro
+				
+			}			
 		}
-		
-		
-		
 	}
 }

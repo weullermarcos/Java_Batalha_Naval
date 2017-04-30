@@ -5,6 +5,13 @@ public class Coordenada {
 
 	protected String letra;
 	protected String numero;
+	protected boolean foiAtingida;
+	
+	public Coordenada() {
+		
+		super();
+		this.foiAtingida = false;
+	}
 	
 	public String getLetra() {
 		return letra;
@@ -17,6 +24,12 @@ public class Coordenada {
 	}
 	public void setNumero(String numero) {
 		this.numero = numero;
+	}
+	public boolean isFoiAtingida() {
+		return foiAtingida;
+	}
+	public void setFoiAtingida(boolean foiAtingida) {
+		this.foiAtingida = foiAtingida;
 	}
 	
 	public boolean letraValida(){
@@ -91,6 +104,56 @@ public class Coordenada {
 		}
 		
 		return true;
+	}
+	
+	public static int fazerDisparoEmCoordenada(ArrayList<Navio> navios, Coordenada coordenada){
+				
+		String letra1 = coordenada.getLetra();
+		String numero1 = coordenada.getNumero();
+		
+		for (Navio navio : navios) {
+			
+			for (Coordenada coordenadaNavio : navio.posicoes) {
+				
+				String letra2 = coordenadaNavio.getLetra();
+				String numero2 = coordenadaNavio.getNumero();
+				
+				if(letra1.equals(letra2) && numero1.equals(numero2)){
+					
+					//marca a coordenada como atingida
+					coordenadaNavio.foiAtingida = true;
+					
+					//retorna o tamanho do navio
+					return navio.tamanho;
+				}	
+			}		
+		}
+		
+		return 0;
+	}
+	
+	//Verifica se um tiro já foi efetuado na coordenada fornecida
+	public static boolean tiroJaEfetudo(ArrayList<Navio> navios, Coordenada coordenada){
+		
+		String letra1 = coordenada.getLetra();
+		String numero1 = coordenada.getNumero();
+		
+		for (Navio navio : navios) {
+			
+			for (Coordenada coordenadaNavio : navio.posicoes) {
+				
+				String letra2 = coordenadaNavio.getLetra();
+				String numero2 = coordenadaNavio.getNumero();
+				
+				if(letra1.equals(letra2) && numero1.equals(numero2)){
+					
+					if(coordenadaNavio.foiAtingida)
+						return true;
+				}	
+			}		
+		}
+		
+		return false;
 	}
 	
 	public static String pegaProximaLetra(String letra){

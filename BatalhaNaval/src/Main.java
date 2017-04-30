@@ -78,8 +78,10 @@ public class Main {
 				//diz qual navio foi acertado
 				System.out.println(Tabuleiro.vrificaDisparo(resultado));
 				
-				
 				//Atualizar tabuleiro
+				tabuleiro.atualizaTabuleiro(resultado, coordenada);
+				
+				//verificar se o navio foi afundado
 				
 			}			
 		}

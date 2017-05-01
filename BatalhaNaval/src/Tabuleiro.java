@@ -148,7 +148,7 @@ public class Tabuleiro {
 		}
 	}
 	
-	public static String vrificaDisparo(int resultado){
+	public static String verificaDisparo(int resultado){
 		
 		switch (resultado) {
 		case 1:
@@ -163,6 +163,24 @@ public class Tabuleiro {
 			return "\n\n**Vc acertou um porta avioes**\n\n";
 		default:
 			return "\n\n**Vc acertou a agua**\n\n";
+		}	
+	}
+	
+	public static String retornaNavioAfundado(int resultado){
+		
+		switch (resultado) {
+		case 1:
+			return "\n\n**Vc afundou um navio de 1 cano**\n\n";
+		case 2:
+			return "\n\n**Vc afundou um navio de 2 canos**\n\n";
+		case 3:
+			return "\n\n**Vc afundou um navio de 3 canos**\n\n";
+		case 4:
+			return "\n\n**Vc afundou um navio de 4 canos**\n\n";
+		case 5:
+			return "\n\n**Vc afundou um porta avioes**\n\n";
+		default:
+			return "";
 		}	
 	}
 }

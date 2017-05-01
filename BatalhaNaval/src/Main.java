@@ -77,11 +77,13 @@ public class Main {
 				int resultado = Coordenada.fazerDisparoEmCoordenada(navios, coordenada);
 				
 				//diz qual navio foi acertado
-				System.out.println(Tabuleiro.vrificaDisparo(resultado));
+				System.out.println(Tabuleiro.verificaDisparo(resultado));
 				
 				//verificar se o navio foi afundado
+				int tipoNavioAfundado = Coordenada.navioAfundou(navios, coordenada);
 				
-				
+				//diz qual navio afundou
+				System.out.println(Tabuleiro.retornaNavioAfundado(resultado));
 				
 				//Atualizar tabuleiro
 				tabuleiro.atualizaTabuleiro(resultado, coordenada);

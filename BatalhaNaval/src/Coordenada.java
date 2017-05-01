@@ -169,6 +169,47 @@ public class Coordenada {
 		return false;
 	}
 	
+	public static int navioAfundou(ArrayList<Navio> navios, Coordenada coordenada){
+		
+		String letra1 = coordenada.getLetra();
+		String numero1 = coordenada.getNumero();
+		Navio navioAcertado =  new Navio();
+		
+		for (Navio navio : navios) {
+			
+			for (Coordenada coordenadaNavio : navio.posicoes) {
+				
+				String letra2 = coordenadaNavio.getLetra();
+				String numero2 = coordenadaNavio.getNumero();
+				
+				if(letra1.equals(letra2) && numero1.equals(numero2)){
+					
+					navioAcertado = navio;
+					break;
+				}	
+			}		
+		}
+		
+		int tamanhoNavio = navioAcertado.tamanho;
+		int disparosNoNavio = 0;
+		
+		for (Coordenada cord : navioAcertado.posicoes) {
+			
+			if(cord.foiAtingida){
+				
+				disparosNoNavio ++;
+			}	
+		}
+		
+		//se o tamanho do navio for igual ao numero de disparos acertados
+		if(tamanhoNavio == disparosNoNavio){
+			
+			navioAcertado.afundou = true;
+		}
+		
+		return tamanhoNavio;
+	}
+	
 	public static String pegaProximaLetra(String letra){
 		
 		switch (letra) {

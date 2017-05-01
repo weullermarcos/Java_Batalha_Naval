@@ -35,7 +35,8 @@ public class Main {
 			boolean letraValida = false;
 			boolean numeroValido = false;
 			
-			tabuleiro.DesenhaCabecalho();
+			int naviosRestantes = Coordenada.contaNaviosEmJogo(navios);
+			tabuleiro.DesenhaCabecalho(naviosRestantes);
 			tabuleiro.DesenhaTabuleiro();
 			
 			Scanner scanner = new Scanner(System.in);
@@ -78,11 +79,13 @@ public class Main {
 				//diz qual navio foi acertado
 				System.out.println(Tabuleiro.vrificaDisparo(resultado));
 				
-				//Atualizar tabuleiro
-				tabuleiro.atualizaTabuleiro(resultado, coordenada);
-				
 				//verificar se o navio foi afundado
 				
+				
+				
+				//Atualizar tabuleiro
+				tabuleiro.atualizaTabuleiro(resultado, coordenada);
+								
 			}			
 		}
 	}

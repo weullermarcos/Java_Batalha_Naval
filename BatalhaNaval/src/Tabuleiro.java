@@ -16,10 +16,11 @@ public class Tabuleiro {
 	
 	int diferencaInicial = 3;
 	
-	public void DesenhaCabecalho(){
+	public void DesenhaCabecalho(int naviosRestantes){
 		
 		System.out.println("******************************************");
 		System.out.println("*\tBatalha Naval - Weuller \t *");
+		System.out.println("*\tNavios restantes: " + String.valueOf(naviosRestantes) + "\t\t *");
 		System.out.println("******************************************");
 		
 	}

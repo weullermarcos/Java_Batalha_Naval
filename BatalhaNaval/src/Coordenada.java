@@ -84,6 +84,19 @@ public class Coordenada {
 
 	}
 	
+	public static int contaNaviosEmJogo(ArrayList<Navio> navios){
+		
+		int naviosEmJogo = 0;
+		
+		for (Navio navio : navios) {
+			
+			if(navio.afundou == false){
+				naviosEmJogo ++;
+			}		
+		}
+		
+		return naviosEmJogo;
+	}
 	
 	public static boolean coordenadaEstaLivre(ArrayList<Navio> navios, Coordenada coordenada) {
 		

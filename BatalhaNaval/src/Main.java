@@ -83,7 +83,7 @@ public class Main {
 				int tipoNavioAfundado = Coordenada.navioAfundou(navios, coordenada);
 				
 				//diz qual navio afundou
-				System.out.println(Tabuleiro.retornaNavioAfundado(resultado));
+				System.out.println(Tabuleiro.retornaNavioAfundado(tipoNavioAfundado));
 				
 				//Atualizar tabuleiro
 				tabuleiro.atualizaTabuleiro(resultado, coordenada);

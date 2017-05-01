@@ -170,15 +170,15 @@ public class Tabuleiro {
 		
 		switch (resultado) {
 		case 1:
-			return "\n\n**Vc afundou um navio de 1 cano**\n\n";
+			return "**Vc afundou um navio de 1 cano**\n\n";
 		case 2:
-			return "\n\n**Vc afundou um navio de 2 canos**\n\n";
+			return "**Vc afundou um navio de 2 canos**\n\n";
 		case 3:
-			return "\n\n**Vc afundou um navio de 3 canos**\n\n";
+			return "**Vc afundou um navio de 3 canos**\n\n";
 		case 4:
-			return "\n\n**Vc afundou um navio de 4 canos**\n\n";
+			return "**Vc afundou um navio de 4 canos**\n\n";
 		case 5:
-			return "\n\n**Vc afundou um porta avioes**\n\n";
+			return "**Vc afundou um porta avioes**\n\n";
 		default:
 			return "";
 		}	

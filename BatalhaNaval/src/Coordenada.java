@@ -205,9 +205,10 @@ public class Coordenada {
 		if(tamanhoNavio == disparosNoNavio){
 			
 			navioAcertado.afundou = true;
+			return tamanhoNavio;
 		}
 		
-		return tamanhoNavio;
+		return 0;
 	}
 	
 	public static String pegaProximaLetra(String letra){
